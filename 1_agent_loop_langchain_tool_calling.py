@@ -2,8 +2,6 @@ from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
-from langgraph.prebuilt import tool_validator
-from langgraph.prebuilt.tool_node import TOOL_EXECUTION_ERROR_TEMPLATE
 from langsmith import traceable
 
 load_dotenv()
@@ -104,6 +102,7 @@ def run_agent(question: str):
         )
     print(f"MAX NUMBER OF ITERACTIONS reached without a final answer")
     return None
+
 
 if __name__ == "__main__":
     print(f"Hello Langchain Agent (.bind_tools)!")
